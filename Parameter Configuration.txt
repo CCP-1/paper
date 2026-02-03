@@ -1,0 +1,17 @@
+To ensure the determinism and full reproducibility of all computational experiments, a global random seed was set at the main entry point of all scripts. This measure fixes all subsequent stochastic processes, including, but not limited to, the initial population generation of metaheuristics, stochastic choices in crossover and mutation operators, the dynamic perturbation of training data, and the Monte Carlo simulations in the final validation phase.
+All core random number generation libraries were initialized with the same seed value of 42. 
+
+Global Random Seeds Used in Experiments
+|Library | Command | Seed |
+| random | random.seed(42) | 42 |
+| numpy | np.random.seed(42) | 42 |
+| torch | torch.manual_seed(42) | 42 |
+
+
+The training of our deep learning model employs an Online Dynamic Perturbation paradigm. The configuration for this process is determined by a set of hyperparameters, which are fixed before the training begins. 
+
+Key Parameters for Online Perturbation Generation
+| Parameter | Symbol | Value | Description |
+| Base Uncertainty Level | uncertainty| 0.3 | Global multiplier for calculating noise standard deviation.|
+| Stochastic Distribution | - | Gaussian (Normal) | The probability model used for generating additive noise. |
+| Noise Mean | noise| 0.0 | The mean of the Gaussian noise. |
