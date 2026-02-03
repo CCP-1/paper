@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "name": "mm10_1",
+    "num_jobs_real": 10,
+    "duedate": 17,
+    "tardiness_cost": 9
+  },
+  "resources": {
+    "renewable": [
+      { "id": "R1", "capacity": 11 },
+      { "id": "R2", "capacity": 9 }
+    ],
+    "nonrenewable": [
+      { "id": "N1", "capacity": 42 },
+      { "id": "N2", "capacity": 17 }
+    ]
+  },
+  "jobs": [
+    {
+      "id": 1,
+      "successors": [2, 3, 4],
+      "modes": [
+        { "id": 1, "duration": 0, "resource_requests": { "R1": 0, "R2": 0, "N1": 0, "N2": 0 } }
+      ]
+    },
+    {
+      "id": 2,
+      "successors": [5, 11],
+      "modes": [
+        { "id": 1, "duration": 1, "resource_requests": { "R1": 7, "R2": 0, "N1": 7, "N2": 0 } },
+        { "id": 2, "duration": 4, "resource_requests": { "R1": 0, "R2": 4, "N1": 7, "N2": 0 } },
+        { "id": 3, "duration": 6, "resource_requests": { "R1": 0, "R2": 3, "N1": 7, "N2": 0 } }
+      ]
+    },
+    {
+      "id": 3,
+      "successors": [5, 11],
+      "modes": [
+        { "id": 1, "duration": 1, "resource_requests": { "R1": 0, "R2": 6, "N1": 2, "N2": 0 } },
+        { "id": 2, "duration": 7, "resource_requests": { "R1": 0, "R2": 6, "N1": 0, "N2": 6 } },
+        { "id": 3, "duration": 10, "resource_requests": { "R1": 8, "R2": 0, "N1": 0, "N2": 6 } }
+      ]
+    },
+    {
+      "id": 4,
+      "successors": [9, 11],
+      "modes": [
+        { "id": 1, "duration": 1, "resource_requests": { "R1": 7, "R2": 0, "N1": 6, "N2": 0 } },
+        { "id": 2, "duration": 2, "resource_requests": { "R1": 0, "R2": 5, "N1": 0, "N2": 8 } },
+        { "id": 3, "duration": 10, "resource_requests": { "R1": 0, "R2": 5, "N1": 5, "N2": 0 } }
+      ]
+    },
+    {
+      "id": 5,
+      "successors": [6],
+      "modes": [
+        { "id": 1, "duration": 1, "resource_requests": { "R1": 9, "R2": 0, "N1": 9, "N2": 0 } },
+        { "id": 2, "duration": 8, "resource_requests": { "R1": 0, "R2": 6, "N1": 8, "N2": 0 } },
+        { "id": 3, "duration": 10, "resource_requests": { "R1": 8, "R2": 0, "N1": 8, "N2": 0 } }
+      ]
+    },
+    {
+      "id": 6,
+      "successors": [7, 8, 10],
+      "modes": [
+        { "id": 1, "duration": 3, "resource_requests": { "R1": 0, "R2": 9, "N1": 0, "N2": 7 } },
+        { "id": 2, "duration": 3, "resource_requests": { "R1": 3, "R2": 0, "N1": 0, "N2": 6 } },
+        { "id": 3, "duration": 4, "resource_requests": { "R1": 0, "R2": 8, "N1": 7, "N2": 0 } }
+      ]
+    },
+    {
+      "id": 7,
+      "successors": [9],
+      "modes": [
+        { "id": 1, "duration": 5, "resource_requests": { "R1": 5, "R2": 0, "N1": 0, "N2": 6 } },
+        { "id": 2, "duration": 8, "resource_requests": { "R1": 0, "R2": 7, "N1": 4, "N2": 0 } },
+        { "id": 3, "duration": 10, "resource_requests": { "R1": 0, "R2": 6, "N1": 0, "N2": 4 } }
+      ]
+    },
+    {
+      "id": 8,
+      "successors": [9],
+      "modes": [
+        { "id": 1, "duration": 2, "resource_requests": { "R1": 4, "R2": 0, "N1": 8, "N2": 0 } },
+        { "id": 2, "duration": 3, "resource_requests": { "R1": 0, "R2": 6, "N1": 0, "N2": 4 } },
+        { "id": 3, "duration": 7, "resource_requests": { "R1": 4, "R2": 0, "N1": 0, "N2": 4 } }
+      ]
+    },
+    {
+      "id": 9,
+      "successors": [12],
+      "modes": [
+        { "id": 1, "duration": 7, "resource_requests": { "R1": 0, "R2": 6, "N1": 8, "N2": 0 } },
+        { "id": 2, "duration": 8, "resource_requests": { "R1": 6, "R2": 0, "N1": 7, "N2": 0 } },
+        { "id": 3, "duration": 9, "resource_requests": { "R1": 0, "R2": 3, "N1": 6, "N2": 0 } }
+      ]
+    },
+    {
+      "id": 10,
+      "successors": [12],
+      "modes": [
+        { "id": 1, "duration": 3, "resource_requests": { "R1": 7, "R2": 0, "N1": 7, "N2": 0 } },
+        { "id": 2, "duration": 4, "resource_requests": { "R1": 0, "R2": 5, "N1": 6, "N2": 0 } },
+        { "id": 3, "duration": 5, "resource_requests": { "R1": 0, "R2": 3, "N1": 0, "N2": 1 } }
+      ]
+    },
+    {
+      "id": 11,
+      "successors": [12],
+      "modes": [
+        { "id": 1, "duration": 4, "resource_requests": { "R1": 0, "R2": 2, "N1": 4, "N2": 0 } },
+        { "id": 2, "duration": 6, "resource_requests": { "R1": 4, "R2": 0, "N1": 0, "N2": 1 } },
+        { "id": 3, "duration": 6, "resource_requests": { "R1": 0, "R2": 2, "N1": 0, "N2": 1 } }
+      ]
+    },
+    {
+      "id": 12,
+      "successors": [],
+      "modes": [
+        { "id": 1, "duration": 0, "resource_requests": { "R1": 0, "R2": 0, "N1": 0, "N2": 0 } }
+      ]
+    }
+  ]
+}
